@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+</head>
+<body>
+	<div class="hopper-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="hopper-header mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title"><b>Kangaroo Game</b></span>
+        </div>
+      </header>
+      <main class="hopper-main mdl-layout__content">
+        <div class="hopper-container mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="hopper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--10-col">
+
+
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--1-col"></div>
+				<div class="mdl-cell--3-col">	
+					<h5>Counter: <span id="counter">0</span> </h5>
+				</div>
+				<div class="mdl-cell--3-col">
+					<h5><u><span id="turn">Orange</span>'s</u> Turn </h5>
+				</div>
+			</div>
+			<hr>
+			<div class="mdl-grid">
+				<div class="mdl-cell--12-col">
+					<div class="center-hopper">	
+					<ul id="kangaroo"></ul>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+			<div class="mdl-grid">
+				<div class="mdl-cell--5-col">	
+					<h4><u>Objective:</u></h4> 
+					<h6>Move all the <b><u>green</b></u> kangaroos to the left side of the field and all the <b><u>orange</b></u> kangaroos to the right side.</h6>
+				</div>
+				<div class="mdl-cell--1-col"></div>
+				<div class="mdl-cell--6-col">
+					<h6><u>Ex. 1 of winning combination:</u> Order of green/orange kangaroos does not matter.</h6>
+					<img src="./img/winningCombo2.png" />
+				</div>
+			</div>
+
+			<div class="mdl-grid">
+				<div class="mdl-cell--5-col">	
+					<h4><u>Rules of the game</u></h4>
+					<h6><b>1.</b> Each kangaroo can only hop <b><u>one or two</b></u> places in an empty grass space. Therefore, kangaroos that are more than 2 spots away are disables and cannot move.</h6>
+					<h6><b>2.</b>Turns alternate. Green goes first, then it's orange's turn on so on.</h6>
+					<h6><b>3.</b>You can <u>lose</u> the game with a <u>stalemate</u>. For example, if it's green kangaroo's turn but the empty grass space is more than two spots away from the closest green kanagaroo, then there is a stalemate and you lose the game. Refer to Ex. 4.</h6>
+					<h6><b>4.</b>Good Luck!</h6>
+				</div>
+				<div class="mdl-cell--1-col"></div>
+				<div class="mdl-cell--6-col">
+					<h6><u>Ex. 2 of a turn:</u> During orange's turn, kanagaroos can either move one places or two. Kangaroo #3 & #4 can land in the empty green space.</h6>
+					<img src="./img/exTurn3.png" />
+					<h6><u>Ex. 3 of a turn:</u> During green's turn, only one kangaroo is within two spots of the empty grass space, so kangaroo #6 is the only one that can make the hop.</h6>
+					<img src="./img/exTurn7.png" />
+					<h6><u>Ex. 4 of a Stalemate:</u> During green's turn, the empty grass space is more than two spaces away from any green kangaroo. You will lose the game and have to start from the beginning!</h6>
+					<img src="./img/exTurn9.png" />
+				</div>
+			</div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</body>
+
+</html>
