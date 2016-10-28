@@ -37,7 +37,7 @@ var greenWinCombo = ["1", "2", "3", "4"]; // the value of id's of the orange kan
 var yellowWinCombo = ["6", "7", "8", "9"]; // the value of id's of the green kangaroos
 
 // adds swapable class to all the li elements
-$('li').addClass('swapable'); 
+$("li").addClass("swapable"); 
 
 $("#1, #2, #6 ,#7 ,#8 ,#9").addClass("unsortable");
 
@@ -60,17 +60,17 @@ droppable({
 
 		// array that checks the value of ids on the left side (slots 0-3)
 		var leftSideCheck = [
-			$('li')[0].attributes.id.value,
-			$('li')[1].attributes.id.value,
-			$('li')[2].attributes.id.value,
-			$('li')[3].attributes.id.value
+			$("li")[0].attributes.id.value,
+			$("li")[1].attributes.id.value,
+			$("li")[2].attributes.id.value,
+			$("li")[3].attributes.id.value
 		];
 		// array that checks the value of ids on the left side (slots 5-8)
 		var rightSideCheck = [
-			$('li')[5].attributes.id.value,
-			$('li')[6].attributes.id.value,
-			$('li')[7].attributes.id.value,
-			$('li')[8].attributes.id.value
+			$("li")[5].attributes.id.value,
+			$("li")[6].attributes.id.value,
+			$("li")[7].attributes.id.value,
+			$("li")[8].attributes.id.value
 		];
 
 		count++; // count is added
@@ -81,6 +81,7 @@ droppable({
 			return n % 2 == 0;
 		}
 
+		// if even/odd, updates the turn in the UI
 		if(isEven(count)){
 			$("#turn").text("Orange");
 		} else {
@@ -118,16 +119,16 @@ droppable({
 		// var finds the position of the space grass el.
 		var spaceIndex = $( "li" ).index($('#5'));
 
-		console.log('spaceIndex', spaceIndex);
+		console.log("spaceIndex", spaceIndex);
 		
 		// checks the proximity of kangaroos to the space grass el.
 		// only kangaroo el's within two spaces are enabled to drag & drop
 		var unsortableCount = 0;
 		for(var i = 0; i <= 8; i++){		
 			if(i < spaceIndex - 2 || spaceIndex + 2 < i) {
-				$( "li" ).eq(i).addClass('unsortable');
-				$( "li" ).eq(i).removeClass('swapable ui-draggable ui-draggable-handle ui-droppable ui-sortable-handle'); // new+
-				$( "li" ).eq(i).draggable('disable').droppable("disable");
+				$( "li" ).eq(i).addClass("unsortable");
+				$( "li" ).eq(i).removeClass("swapable ui-draggable ui-draggable-handle ui-droppable ui-sortable-handle");
+				$( "li" ).eq(i).draggable("disable").droppable("disable");
 				}
 
 			if($( "li" ).eq(i).hasClass('unsortable')) {
@@ -139,11 +140,12 @@ droppable({
 			}
 		}
 
-		console.log('unsortableCount', unsortableCount);
+		console.log("unsortableCount", unsortableCount);
 	}});
 
-// to start off the game, these element should not be able to be dragged on the first turn
-$("#1, #2, #5, #6 ,#7 ,#8 ,#9").draggable('disable'); 
+// to start off the game, these element should not be able to be dragged and dropped on the first turn
+$("#1, #2, #6 ,#7 ,#8 ,#9").draggable('disable').droppable('disable');
+$("#5").draggable("disable"); 
 
 	});
 });
